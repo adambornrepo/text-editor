@@ -98,6 +98,10 @@ To preview the production build locally, run:
 npm run preview
 ```
 
+## ⚠ Warning
+
+Since the Tiptap `font-size` extension package can only be installed as version 3 and causes compatibility issues, the `"tiptap-extension-font-size": "^1.2.0"` package has been installed instead. It would be more appropriate to replace this package once conflicts are resolved.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
