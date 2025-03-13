@@ -8,7 +8,7 @@ A modern text editor built with **Vite, React, and Tailwind CSS**. This project 
 ## Live
 
 Try out the text editor in action:
-**[View Live](https://texteditor.vercel.app)**
+**[View Live](https://text-editor-dm.vercel.app)**
 
 ## Features
 
