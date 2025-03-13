@@ -1,12 +1,117 @@
-# React + Vite
+# Text Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern text editor built with **Vite, React, and Tailwind CSS**. This project leverages TipTap-based editor components to offer advanced text formatting options for a seamless editing experience.
 
-Currently, two official plugins are available:
+![Editor Preview](./public/screenshot.png)  
+*Note: The above screenshot is for demonstration purposes. Run the application to see the live preview.*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live
 
-## Expanding the ESLint configuration
+Try out the text editor in action:
+**[View Live](https://texteditor.vercel.app)**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Rich Text Formatting:** Basic formatting options such as bold, italic, underline, and more
+- **Advanced Color Controls:** Change text and highlight colors with ease
+- **Font Size Controls:** Adjust the font size to suit your needs
+- **Heading and List Controls:** Quickly add headings, bullet lists, and numbered lists
+- **Text Alignment:** Easily align text (left, center, right)
+- **Link Insertion:** Insert hyperlinks effortlessly
+- **Real-time Output:** Live HTML output preview of the edited text
+- **Responsive Design:** Works seamlessly across different screen sizes
+
+## Technologies
+
+- **[React](https://reactjs.org/):** For building interactive user interfaces
+- **[Vite](https://vitejs.dev/):** A fast development server and build tool
+- **[Tailwind CSS](https://tailwindcss.com/):** A utility-first CSS framework for rapid styling
+- **[TipTap](https://tiptap.dev/):** A powerful framework for building rich text editors
+- **[React Icons](https://react-icons.github.io/react-icons/):** For scalable vector icons
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/adambornrepo/text-editor.git
+   cd text-editor
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   
+   Navigate to `http://localhost:5173` to see the application running.
+
+## Project Structure
+
+```
+text-editor/
+├── public/             # Static assets
+├── src/
+│   ├── components/     # UI components
+│   │   ├── TextFormatToolbar.jsx
+│   │   ├── FontSizeControls.jsx
+│   │   ├── LinkControls.jsx
+│   │   ├── HeadingControls.jsx
+│   │   ├── ListControls.jsx
+│   │   ├── AlignmentControls.jsx
+│   │   ├── TextColorControls.jsx
+│   │   └── HighlightColorControls.jsx
+│   ├── utils/          # Helper functions
+│   │   ├── editorConfig.js
+│   │   └── colorPalette.js
+│   ├── TextEditor.jsx  # Main editor component
+│   ├── main.jsx        # Application entry point
+│   └── index.css       # Global styles
+├── index.html          # HTML template
+├── vite.config.js      # Vite configuration
+└── package.json        # Project dependencies
+```
+
+## Building for Production
+
+To build the application for production, run:
+
+```bash
+npm run build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Preview Production Build
+
+To preview the production build locally, run:
+
+```bash
+npm run preview
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For any inquiries or feedback, please reach out via [doganmerden.com](https://doganmerden.com).
