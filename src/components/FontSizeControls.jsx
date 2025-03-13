@@ -62,7 +62,7 @@ const FontSizeControls = memo(({ editor, isOpen, onToggle, onClose }) => {
             />
             <span className="text-xs ml-0.5">px</span>
             <button
-              onClick={(e) => {
+              onClick={() => {
                 if (selectedSize && !isNaN(parseInt(selectedSize))) {
                   editor.chain().focus().setFontSize(`${selectedSize}px`).run();
                 }
