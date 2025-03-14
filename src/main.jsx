@@ -5,7 +5,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="container min-w-[340px] max-w-3xl mx-auto py-6">
+    <div className="container min-w-[350px] max-w-3xl mx-auto py-6 px-2">
       <TextEditor />
     </div>
   </StrictMode>
