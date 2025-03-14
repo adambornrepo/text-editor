@@ -7,8 +7,9 @@ const FontSizeControls = memo(({ editor, isOpen, onToggle, onClose }) => {
 
   useEffect(() => {
     if (isOpen && editor.isActive("textStyle")) {
-      const size = editor.getAttributes("textStyle").fontSize;
-      setSelectedSize(size.replace("px", ""));
+      let size = editor.getAttributes("textStyle").fontSize;
+      size = size ? size.replace("px", "") : "16";
+      setSelectedSize(size);
     } else if (isOpen) {
       setSelectedSize(16);
     }
@@ -63,7 +64,9 @@ const FontSizeControls = memo(({ editor, isOpen, onToggle, onClose }) => {
             <span className="text-xs ml-0.5">px</span>
             <button
               onClick={() => {
-                if (selectedSize && !isNaN(parseInt(selectedSize))) {
+                if (!selectedSize) return;
+                const sizeValue = parseInt(selectedSize);
+                if (!isNaN(sizeValue) && sizeValue >= 8 && sizeValue <= 72) {
                   editor.chain().focus().setFontSize(`${selectedSize}px`).run();
                 }
               }}
