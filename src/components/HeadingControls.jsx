@@ -8,6 +8,7 @@ import {
   BsTypeH6,
   BsPCircle
 } from "react-icons/bs";
+import DropdownContainer from "./DropdownContainer";
 
 const HeadingControls = memo(({ editor, isOpen, onToggle, onClose }) => {
   const getActiveIcon = (editor) => {
@@ -32,66 +33,64 @@ const HeadingControls = memo(({ editor, isOpen, onToggle, onClose }) => {
   };
 
   return (
-    <div className="relative">
+    <DropdownContainer isOpen={isOpen} onClose={onClose}>
       <button onClick={onToggle} className="toolbox-button" title="Heading">
         {getActiveIcon(editor)}
       </button>
 
-      {isOpen && (
-        <div className="absolute z-10 mt-1.5 w-fit sm:w-24 bg-white border border-gray-300 rounded-md shadow-lg">
-          <div className="p-1">
-            <div className="grid grid-cols-3 gap-1">
-              {[1, 2, 3, 4, 5, 6].map((level) => (
-                <button
-                  key={level}
-                  onClick={() => {
-                    editor.chain().focus().toggleHeading({ level }).run();
-                    onClose();
-                  }}
-                  className={`toolbox-dropdown-button hover:bg-gray-100 ${
-                    editor.isActive("heading", { level })
-                      ? "bg-stone-200 hover:bg-stone-200"
-                      : ""
-                  }`}
-                >
-                  {level === 1 && (
-                    <BsTypeH1 className="toolbox-dropdown-button-icon" />
-                  )}
-                  {level === 2 && (
-                    <BsTypeH2 className="toolbox-dropdown-button-icon" />
-                  )}
-                  {level === 3 && (
-                    <BsTypeH3 className="toolbox-dropdown-button-icon" />
-                  )}
-                  {level === 4 && (
-                    <BsTypeH4 className="toolbox-dropdown-button-icon" />
-                  )}
-                  {level === 5 && (
-                    <BsTypeH5 className="toolbox-dropdown-button-icon" />
-                  )}
-                  {level === 6 && (
-                    <BsTypeH6 className="toolbox-dropdown-button-icon" />
-                  )}
-                </button>
-              ))}
-            </div>
-            <button
-              onClick={() => {
-                editor.chain().focus().setParagraph().run();
-                onClose();
-              }}
-              className={`flex items-center justify-center w-full px-1 py-0.5 mt-1 rounded hover:bg-gray-100 cursor-pointer ${
-                editor.isActive("paragraph")
-                  ? "bg-stone-200 hover:bg-stone-200"
-                  : ""
-              }`}
-            >
-              <span className="text-center text-xs px-1">Paragraph</span>
-            </button>
+      <div className="w-fit sm:w-24">
+        <div className="p-1">
+          <div className="grid grid-cols-3 gap-1">
+            {[1, 2, 3, 4, 5, 6].map((level) => (
+              <button
+                key={level}
+                onClick={() => {
+                  editor.chain().focus().toggleHeading({ level }).run();
+                  onClose();
+                }}
+                className={`toolbox-dropdown-button hover:bg-gray-100 ${
+                  editor.isActive("heading", { level })
+                    ? "bg-stone-200 hover:bg-stone-200"
+                    : ""
+                }`}
+              >
+                {level === 1 && (
+                  <BsTypeH1 className="toolbox-dropdown-button-icon" />
+                )}
+                {level === 2 && (
+                  <BsTypeH2 className="toolbox-dropdown-button-icon" />
+                )}
+                {level === 3 && (
+                  <BsTypeH3 className="toolbox-dropdown-button-icon" />
+                )}
+                {level === 4 && (
+                  <BsTypeH4 className="toolbox-dropdown-button-icon" />
+                )}
+                {level === 5 && (
+                  <BsTypeH5 className="toolbox-dropdown-button-icon" />
+                )}
+                {level === 6 && (
+                  <BsTypeH6 className="toolbox-dropdown-button-icon" />
+                )}
+              </button>
+            ))}
           </div>
+          <button
+            onClick={() => {
+              editor.chain().focus().setParagraph().run();
+              onClose();
+            }}
+            className={`flex items-center justify-center w-full px-1 py-0.5 mt-1 rounded hover:bg-gray-100 cursor-pointer ${
+              editor.isActive("paragraph")
+                ? "bg-stone-200 hover:bg-stone-200"
+                : ""
+            }`}
+          >
+            <span className="text-center text-xs px-1">Paragraph</span>
+          </button>
         </div>
-      )}
-    </div>
+      </div>
+    </DropdownContainer>
   );
 });
 

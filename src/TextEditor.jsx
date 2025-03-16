@@ -43,9 +43,25 @@ const TextEditor = ({
           TEXT EDITOR
         </div>
       </div>
-      <div className="bg-white mt-4 border border-gray-300 rounded-md shadow-md shadow-stone-800">
+      <div className="text-editor-wrapper bg-white mt-4 border border-gray-300 rounded-md shadow-md shadow-stone-800">
         <div className="flex items-center flex-wrap p-1 border-b border-stone-300 gap-1 sm:gap-2 bg-stone-100 rounded-t-md">
           <TextFormatToolbar editor={editor} />
+
+          <div className="toolbox-divider"></div>
+
+          <FontSizeControls
+            editor={editor}
+            isOpen={activeMenu === "fontSize"}
+            onToggle={() => toggleMenu("fontSize")}
+            onClose={closeAllMenus}
+          />
+
+          <HeadingControls
+            editor={editor}
+            isOpen={activeMenu === "heading"}
+            onToggle={() => toggleMenu("heading")}
+            onClose={closeAllMenus}
+          />
 
           <div className="toolbox-divider"></div>
 
@@ -65,29 +81,6 @@ const TextEditor = ({
 
           <div className="toolbox-divider"></div>
 
-          <FontSizeControls
-            editor={editor}
-            isOpen={activeMenu === "fontSize"}
-            onToggle={() => toggleMenu("fontSize")}
-            onClose={closeAllMenus}
-          />
-
-          <HeadingControls
-            editor={editor}
-            isOpen={activeMenu === "heading"}
-            onToggle={() => toggleMenu("heading")}
-            onClose={closeAllMenus}
-          />
-
-          <LinkControls
-            editor={editor}
-            isOpen={activeMenu === "link"}
-            onToggle={() => toggleMenu("link")}
-            onClose={closeAllMenus}
-          />
-
-          <div className="toolbox-divider"></div>
-
           <AlignmentControls
             editor={editor}
             isOpen={activeMenu === "align"}
@@ -99,6 +92,13 @@ const TextEditor = ({
             editor={editor}
             isOpen={activeMenu === "list"}
             onToggle={() => toggleMenu("list")}
+            onClose={closeAllMenus}
+          />
+
+          <LinkControls
+            editor={editor}
+            isOpen={activeMenu === "link"}
+            onToggle={() => toggleMenu("link")}
             onClose={closeAllMenus}
           />
         </div>
