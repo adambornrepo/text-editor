@@ -20,6 +20,7 @@ Try out the text editor in action:
 - **Link Insertion:** Insert hyperlinks effortlessly
 - **Real-time Output:** Live HTML output preview of the edited text
 - **Responsive Design:** Works seamlessly across different screen sizes
+- **Accurate Dropdown Positioning:** Dropdowns are always correctly positioned thanks to FloatingUI.
 
 ## Technologies
 
@@ -28,6 +29,7 @@ Try out the text editor in action:
 - **[Tailwind CSS](https://tailwindcss.com/):** A utility-first CSS framework for rapid styling
 - **[TipTap](https://tiptap.dev/):** A powerful framework for building rich text editors
 - **[React Icons](https://react-icons.github.io/react-icons/):** For scalable vector icons
+- **[FloatingUI](https://floating-ui.com/docs/react):** Provides accurate and robust positioning for dropdowns and tooltips.
 
 ## Installation
 
@@ -61,6 +63,7 @@ text-editor/
 ├── public/             # Static assets
 ├── src/
 │   ├── components/     # UI components
+│   │   ├── DropdownContainer.jsx
 │   │   ├── TextFormatToolbar.jsx
 │   │   ├── FontSizeControls.jsx
 │   │   ├── LinkControls.jsx
